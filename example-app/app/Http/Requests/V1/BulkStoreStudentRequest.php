@@ -5,7 +5,7 @@ namespace App\Http\Requests\V1;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class UpdateStudentRequest extends FormRequest
+class  BulkStoreStudentRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,23 +22,23 @@ class UpdateStudentRequest extends FormRequest
      */
     public function rules(): array
     {
-        $method =$this->method();
-        if($method == 'PUT') {
         return [
             'name' => ['required'],
             'email' => ['required', 'email'],
             'address' => ['required'],
             'study_course' => ['required', Rule::in(['IT', 'BS', 'AC'])],
-
-        ];
-    }   else {
-        return [
-            'name' => ['sometimes', 'required'],
-            'email' => ['sometimes','required', 'email'],
-            'address' => ['sometimes','required'],
-            'study_course' => ['sometimes','required', Rule::in(['IT', 'BS', 'AC'])],
-
         ];
     }
+
 }
-}
+
+//---------------------------------------------------------------
+//|       ____                                                  |
+//|      |    \                                                 |
+//|      |____|                                                 |
+//|      |\                                                     |
+//|      | \     eminder : This function no do yet..            |
+//|      |   \                                                  |
+//|                                                             |
+//|                                                             |
+//---------------------------------------------------------------
