@@ -38,8 +38,12 @@ class StudentController extends Controller
         return new StudentResource(Student::create($request->all()));
     }
 
+    public function staffUse() {
+        return "test";
+    }
+
     public function bulkStore(Request $request) {
-        
+
     }
 
     /**

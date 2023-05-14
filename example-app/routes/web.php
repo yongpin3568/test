@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\V1\StudentController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +15,14 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+//HomePage
 Route::get('/', function () {
     return view('welcome');
 });
+//Student Detail Page
+Route::get('show', function(){
+    return view('studentDetail');
+});
+//staff login page
+Route::post('staff', [StudentController::class, 'staffUse']);
+Route::view('stafflogin', 'staff');
