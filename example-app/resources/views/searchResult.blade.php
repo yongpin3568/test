@@ -1,15 +1,18 @@
+<link href="/css/loginpage.css"  rel="stylesheet">
+
 <h1>Search Results</h1>
 
-<p>Search Query: {{ $query }}</p>
+<p>Student Details: {{ $query }}</p>
 
 @if ($students->count() > 0)
     <ul>
         @foreach ($students as $student)
             <li>
-                {{ $student->name }} - {{ $student->email }}
+                Name: {{ $student->name }}  <br> Email: {{ $student->email }}
             </li>
         @endforeach
     </ul>
 @else
     <p>No results found.</p>
 @endif
+<a href="staff">Back to search page</a>

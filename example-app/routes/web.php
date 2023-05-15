@@ -28,7 +28,7 @@ Route::get('detail', function(){
 
 // Staff login page
 Route::post('staff', [StudentController::class, 'staffUse']);
-Route::view('stafflogin', 'staff');
+Route::view('staff', 'staff');
 
 // Homepage (duplicate)
 Route::get('/', function () {

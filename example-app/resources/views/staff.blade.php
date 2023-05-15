@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title> STAFF LOGIN</title>
+    <title>Staff Search</title>
     
     <link href="/css/loginpage.css"  rel="stylesheet">
 
