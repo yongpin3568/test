@@ -3,9 +3,23 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <link href="/css/loginpage.css"  rel="stylesheet">
         <title>Laravel</title>
-        <h1> TEST HELLO </h1>
+        <h1>Click Below</h1>
+        <a href="staff">Search Student</a>
+        <br>
+        <a href="api\v1\student">API_Result</a>
+        <br>
+        <h2>Pagination</h2>
+        <ul>
+        <li>  <a href="api\v1\student?page=1">Page 1</a>    </li>
+        <li>  <a href="api\v1\student?page=5">Page 5</a>    </li>
+        </ul>
+        <h2>Specific id</h2>
+        <ul>
+        <li>   <a href="api\v1\student\1">Student with ID 1</a>    </li>
+        <li>   <a href="api\v1\student\15">Student with ID 15</a>  </li>
+        </ul>
         <!-- Fonts -->
         <!-- <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" /> -->
