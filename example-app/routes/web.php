@@ -21,11 +21,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Student Detail Page
-Route::get('detail', function(){
-    return view('studentDetail');
-});
-
 // Staff login page
 Route::post('staff', [StudentController::class, 'staffUse']);
 Route::view('staff', 'staff');
