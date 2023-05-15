@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\V1\StudentController;
-
-
+use Illuminate\Http\Request;
+use App\Models\Student; 
 
 /*
 |--------------------------------------------------------------------------
@@ -15,14 +15,25 @@ use App\Http\Controllers\Api\V1\StudentController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-//HomePage
+
+// Home Page
 Route::get('/', function () {
     return view('welcome');
 });
-//Student Detail Page
-Route::get('show', function(){
+
+// Student Detail Page
+Route::get('detail', function(){
     return view('studentDetail');
 });
-//staff login page
+
+// Staff login page
 Route::post('staff', [StudentController::class, 'staffUse']);
 Route::view('stafflogin', 'staff');
+
+// Homepage (duplicate)
+Route::get('/', function () {
+    return view('welcome');
+});
+
+// Search functionality
+Route::post('/search', [StudentController::class, 'searchStudents'])->name('students.search');

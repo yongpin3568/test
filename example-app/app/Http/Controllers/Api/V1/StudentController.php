@@ -19,7 +19,15 @@ class StudentController extends Controller
      */
     public function index()
     {
-        return new StudentCollection(Student::paginate()); //can be all or paginate(max 15 obj per page)
+        return new StudentCollection(Student::paginate(5)); //can be all or paginate(max 15 obj per page)
+        
+    }
+
+    public function testing()
+    {
+        $students = Student::all();
+        return new StudentCollection($students);
+       
     }
 
     /**
@@ -29,7 +37,16 @@ class StudentController extends Controller
     {
         //
     }
+    public function searchStudents(Request $request)
+    {
+        $query = $request->input('query');
 
+        $students = Student::where('name', 'LIKE', '%' . $query . '%')
+            ->orWhere('email', 'LIKE', '%' . $query . '%')
+            ->get();
+
+        return view('searchResult', compact('students', 'query'));
+    }
     /**
      * Store a newly created resource in storage.
      */
