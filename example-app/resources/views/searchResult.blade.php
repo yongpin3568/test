@@ -8,7 +8,7 @@
     <ul>
         @foreach ($students as $student)
             <li>
-                Name: {{ $student->name }}  <br> Email: {{ $student->email }}
+                Name: {{ $student->name }}  <br> Address: {{ $student->address }}
             </li>
         @endforeach
     </ul>
